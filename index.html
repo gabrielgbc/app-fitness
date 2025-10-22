@@ -22,10 +22,6 @@
         .slide-in { animation: slideIn 0.5s ease-out; }
         .float { animation: float 3s ease-in-out infinite; }
         
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
         .card-hover {
             transition: all 0.3s ease;
         }
@@ -138,8 +134,8 @@
     </div>
 
     <!-- Bike Calculator -->
-    <div id="bikeScreen" class="hidden container max-w-4xl mx-auto px-4 py-8 fade-in">
-        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8">
+    <div id="bikeScreen" class="hidden container max-w-4xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 fade-in">
             <div class="text-center mb-8">
                 <div class="flex items-center justify-center gap-3 mb-3">
                     <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,8 +233,8 @@
     </div>
 
     <!-- Treadmill Calculator -->
-    <div id="treadmillScreen" class="hidden container max-w-4xl mx-auto px-4 py-8 fade-in">
-        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8">
+    <div id="treadmillScreen" class="hidden container max-w-4xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 fade-in">
             <div class="text-center mb-8">
                 <div class="flex items-center justify-center gap-3 mb-3">
                     <svg class="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -283,7 +279,7 @@
                     </div>
                     <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-5 rounded-xl border border-green-200">
                         <h4 class="font-bold text-gray-800 mb-2">⚖️ Peso Perdido</h4>
-                        <p class="text-3xl font-bold text-green-600"><span id="treadWeight">0</span> kg</p>
+                        <p class="text-3xl font-bold text-green-600"><span id="treadWeightLost">0</span> kg</p>
                     </div>
                     <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-5 rounded-xl border border-blue-200">
                         <h4 class="font-bold text-gray-800 mb-2">⚡ Intensidade (MET)</h4>
@@ -432,7 +428,7 @@
             const distancia = velocidadeKmh * tempoHoras;
 
             document.getElementById('treadCalories').textContent = Math.round(calorias);
-            document.getElementById('treadWeight').textContent = kgPerdidos.toFixed(4);
+            document.getElementById('treadWeightLost').textContent = kgPerdidos.toFixed(4);
             document.getElementById('treadMet').textContent = metAjustado.toFixed(1);
             document.getElementById('treadDistance').textContent = distancia.toFixed(2);
             document.getElementById('treadResults').classList.remove('hidden');
