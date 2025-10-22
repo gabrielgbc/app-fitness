@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+# Writing the complete HTML app to a file so you can download it directly.
+html_content = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -385,4 +386,12 @@
   </script>
 </body>
 </html>
+"""
+# write file
+path = "/mnt/data/fitness_calculator_app.html"
+with open(path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+# provide download link to user
+print(f"File written to: {path}")
 
